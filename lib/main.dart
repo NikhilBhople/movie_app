@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:movieapp/pages/home_page.dart';
+import 'package:movieapp/pages/home/home_page.dart';
 
 void main() => runApp(MovieApp());
 
@@ -10,6 +10,10 @@ class MovieApp extends StatelessWidget {
     return MaterialApp(
       title: 'Movie App',
       home: HomePage(),
+      theme: ThemeData(
+        primaryColor: Colors.white,
+        accentColor: Colors.red
+      ),
     );
   }
 }
