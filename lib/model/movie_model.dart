@@ -75,7 +75,7 @@ final List<String> labels = [
   'New',
 ];
 
-final List<String> myList = [
+final List<String> favorite = [
   'assets/images/shigatsu_wa_kimi_no_uso.jpg',
   'assets/images/plastic_memories.png',
   'assets/images/erased.jpg',
