@@ -22,7 +22,7 @@ Widget buildContent(String title, List<String> list) {
         ),
       ),
       Container(
-        height: 160,
+        height: 180,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: list.length,
@@ -41,8 +41,8 @@ Widget buildContent(String title, List<String> list) {
                 borderRadius: BorderRadius.circular(10),
                 child: Image(
                   image: AssetImage(list[position]),
-                  height: 140,
-                  width: 100,
+                  height: 160,
+                  width: 120,
                   fit: BoxFit.fill,
                 ),
               ),
