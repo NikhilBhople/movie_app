@@ -68,11 +68,17 @@ final List<Movie> movies = [
   ),
 ];
 
-final List<String> labels = [
-  'Discover',
-  'Categories',
-  'Specials',
-  'New',
+class Label {
+  String imageUrl;
+  String title;
+  Label(this.imageUrl, this.title);
+}
+
+final List<Label> labels = [
+  Label('assets/images/seven_deadly_sins.jpg', 'Discovery'),
+  Label('assets/images/daredevil.jpg', 'Categories'),
+  Label('assets/images/endgame.jpg', 'Specials'),
+  Label('assets/images/shigatsu_wa_kimi_no_uso.jpg', 'New'),
 ];
 
 final List<String> favorite = [

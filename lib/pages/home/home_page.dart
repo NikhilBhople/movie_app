@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movieapp/model/movie_model.dart';
 import 'package:movieapp/pages/home/widgets/content_list.dart';
+import 'package:movieapp/pages/home/widgets/labels.dart';
 import 'package:movieapp/pages/home/widgets/top_banner_container.dart';
 
 class HomePage extends StatefulWidget {
@@ -35,6 +36,7 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         children: <Widget>[
           buildBannerContainer(_pageController),
+          buildLabels(labels),
           SizedBox(height: 10),
           buildContent("Favorite List", favorite),
           SizedBox(height: 10),
