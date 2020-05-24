@@ -7,35 +7,36 @@ class Movie {
   int length;
   String description;
   List<String> screenshots;
+  double rating;
 
-  Movie({
-    this.imageUrl,
-    this.title,
-    this.categories,
-    this.year,
-    this.country,
-    this.length,
-    this.description,
-    this.screenshots,
-  });
+  Movie(
+      {this.imageUrl,
+      this.title,
+      this.categories,
+      this.year,
+      this.country,
+      this.length,
+      this.description,
+      this.screenshots,
+      this.rating});
 }
 
 final List<Movie> movies = [
   Movie(
-    imageUrl: 'assets/images/spiderman.jpg',
-    title: 'Spider-Man: Far From Home',
-    categories: 'Fantasy, Sci-fi',
-    year: 2018,
-    country: 'USA',
-    length: 129,
-    description:
-        'Our friendly neighborhood Super Hero decides to join his best friends Ned, MJ, and the rest of the gang on a European vacation. However, Peter\'s plan to leave super heroics behind for a few weeks are quickly scrapped when he begrudgingly agrees to help Nick Fury uncover the mystery of several elemental creature attacks, creating havoc across the continent.',
-    screenshots: [
-      'assets/images/spiderman_0.jpg',
-      'assets/images/spiderman_1.jpg',
-      'assets/images/spiderman_2.jpg',
-    ],
-  ),
+      imageUrl: 'assets/images/spiderman.jpg',
+      title: 'Spider-Man: Far From Home',
+      categories: 'Fantasy, Sci-fi',
+      year: 2018,
+      country: 'USA',
+      length: 129,
+      description:
+          'Our friendly neighborhood Super Hero decides to join his best friends Ned, MJ, and the rest of the gang on a European vacation. However, Peter\'s plan to leave super heroics behind for a few weeks are quickly scrapped when he begrudgingly agrees to help Nick Fury uncover the mystery of several elemental creature attacks, creating havoc across the continent.',
+      screenshots: [
+        'assets/images/spiderman_0.jpg',
+        'assets/images/spiderman_1.jpg',
+        'assets/images/spiderman_2.jpg',
+      ],
+      rating: 4.0),
   Movie(
     imageUrl: 'assets/images/nutcracker.jpg',
     title: 'The Nutcracker And The Four Realms',
@@ -50,6 +51,7 @@ final List<Movie> movies = [
       'assets/images/nutcracker_1.jpg',
       'assets/images/nutcracker_2.jpg',
     ],
+    rating: 3.5,
   ),
   Movie(
     imageUrl: 'assets/images/toystory.jpg',
@@ -65,6 +67,7 @@ final List<Movie> movies = [
       'assets/images/toystory_1.jpg',
       'assets/images/toystory_2.jpg',
     ],
+    rating: 4.5,
   ),
 ];
 
