@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:movieapp/model/movie_model.dart';
+import 'package:movieapp/pages/detail/movie_detail.dart';
 
 
 Container buildBannerContainer(PageController pageController) {
@@ -26,11 +26,14 @@ Widget bannerSelector(int page, PageController pageController) {
         value = pageController.page - page;
         value = (1 - (value.abs() * 0.3) + 0.02).clamp(0.0, 1.0);
       }
-      return Center(
-        child: SizedBox(
-          height: Curves.easeInOut.transform(value) * 270,
-          width: Curves.easeInOut.transform(value) * 400,
-          child: widget,
+      return GestureDetector(
+        onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_) => MovieDetailPage(movies[page]))),
+        child: Center(
+          child: SizedBox(
+            height: Curves.easeInOut.transform(value) * 270,
+            width: Curves.easeInOut.transform(value) * 400,
+            child: widget,
+          ),
         ),
       );
     },
@@ -47,13 +50,16 @@ Widget bannerSelector(int page, PageController pageController) {
                     blurRadius: 10)
               ],
             ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image(
-                image: AssetImage(movies[page].imageUrl),
-                fit: BoxFit.fill,
-                height: 220,
-                width: double.infinity,
+            child: Hero(
+              tag: movies[page].imageUrl,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image(
+                  image: AssetImage(movies[page].imageUrl),
+                  fit: BoxFit.fill,
+                  height: 220,
+                  width: double.infinity,
+                ),
               ),
             ),
           ),
