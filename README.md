@@ -16,3 +16,11 @@ Creating custom shadow for image, solution found on below link\
   <img src="readme_image/movieAppHome.png" width="300" height="620" title="Home page iOS">
   <img src="readme_image/movieDetailPage.png" width="300" height="620" title="Home page iOS">
 </p>
+
+
+## App Screenshot (Android)
+<p>
+  <img src="readme_image/androidHome.png" width="320" height="620" title="Home page Android">
+  <img src="readme_image/androidDetail.png" width="320" height="620" title="Detail page Android">
+  <img src="readme_image/androidDetail1.png" width="320" height="620" title="Detail page after scroll Android">
+</p>
