@@ -35,15 +35,21 @@ class _HomePageState extends State<HomePage> {
       ),
       body: ListView(
         children: <Widget>[
-          buildBannerContainer(_pageController),
-          buildLabels(labels),
+          BannerContainer(pageController: _pageController),
+          BuildLabels(labels: labels),
           SizedBox(height: 10),
-          buildContent("Favorite List", favorite),
+          BuildContentList(title: 'Favorite List',list: favorite),
           SizedBox(height: 10),
-          buildContent("Popular List", popular),
+          BuildContentList(title: 'Popular List',list: popular),
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 
 }

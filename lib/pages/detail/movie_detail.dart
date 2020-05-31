@@ -23,19 +23,19 @@ class MovieDetailPage extends StatelessWidget {
               height: 370,
               child: Stack(
                 children: <Widget>[
-                  buildImageContainer(movie),
-                  buildAppBar(context),
-                  buildPlayButton(),
-                  buildShareAndAddButton()
+                  ImageContainer(movie: movie),
+                  BuildAppBar(),
+                  PlayButton(),
+                  ShareAndAddButton()
                 ],
               ),
             ),
             buildMovieTitle(),
             buildMovieCategoriesText(),
-            buildRaringBar(movie),
-            buildCountryYearLengthOfMovie(movie),
+            RaringBar(movie: movie),
+            BuildCountryYearLengthOfMovie(movie: movie),
             buildMovieDescription(),
-            buildContent("Screenshots", movie.screenshots),
+            BuildContentList(title: 'Screenshots',list: movie.screenshots),
           ],
         ),
         context: context,
@@ -43,21 +43,8 @@ class MovieDetailPage extends StatelessWidget {
     );
   }
 
-  Padding buildMovieDescription() {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Text(
-        movie.description,
-        style: TextStyle(
-          color: Colors.grey,
-          fontSize: 14,
-        ),
-        textAlign: TextAlign.justify,
-      ),
-    );
-  }
 
-  Container buildMovieCategoriesText() {
+  buildMovieCategoriesText() {
     return Container(
       width: 200,
       height: 50,
@@ -74,7 +61,7 @@ class MovieDetailPage extends StatelessWidget {
     );
   }
 
-  Container buildMovieTitle() {
+  buildMovieTitle() {
     return Container(
       margin: EdgeInsets.only(top: 15),
       width: 200,
@@ -89,6 +76,20 @@ class MovieDetailPage extends StatelessWidget {
           ),
           textAlign: TextAlign.center,
         ),
+      ),
+    );
+  }
+
+  buildMovieDescription() {
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Text(
+        movie.description,
+        style: TextStyle(
+          color: Colors.grey,
+          fontSize: 14,
+        ),
+        textAlign: TextAlign.justify,
       ),
     );
   }
