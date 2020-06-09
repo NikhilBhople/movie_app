@@ -1,22 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movieapp/bloc/banner/banner_bloc.dart';
+import 'package:movieapp/bloc/banner/banner_state.dart';
 import 'package:movieapp/model/movie_model.dart';
+import 'package:movieapp/pages/home/widgets/banner/banner_state_builder.dart';
 import 'package:movieapp/pages/home/widgets/content_list.dart';
 import 'package:movieapp/pages/home/widgets/labels.dart';
-import 'package:movieapp/pages/home/widgets/top_banner_container.dart';
+import 'package:movieapp/pages/home/widgets/banner/top_banner_container.dart';
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
 
-class _HomePageState extends State<HomePage> {
-  PageController _pageController;
-
-  @override
-  void initState() {
-    super.initState();
-    _pageController = PageController(initialPage: 1, viewportFraction: 0.8);
-  }
+class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +28,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: ListView(
         children: <Widget>[
-          BannerContainer(pageController: _pageController),
+          BlocBuilder<BannerBloc, BannerState>(builder: (context, state) => BannerStateBuilder()),
           BuildLabels(labels: labels),
           SizedBox(height: 10),
           BuildContentList(title: 'Favorite List',list: favorite),
@@ -45,12 +38,5 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
-
 }
 
