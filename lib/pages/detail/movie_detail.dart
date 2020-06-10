@@ -4,7 +4,7 @@ import 'package:movieapp/model/movie_model.dart';
 import 'package:movieapp/pages/detail/widget/build_country_year_lenght.dart';
 import 'package:movieapp/pages/detail/widget/detail_top_banner_stack.dart';
 import 'package:movieapp/pages/detail/widget/rating_bar.dart';
-import 'package:movieapp/pages/home/widgets/content_list.dart';
+import 'package:movieapp/pages/home/widgets/movielist/content_list.dart';
 
 class MovieDetailPage extends StatelessWidget {
   final Movie movie;

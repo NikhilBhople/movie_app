@@ -8,7 +8,6 @@ abstract class BannerState extends Equatable {
   List<Object> get props => [];
 }
 
-class InitialBannerState extends BannerState {}
 class LoadingBannerState extends BannerState {}
 class LoadedBannerState extends BannerState {
   final List<Movie> moviesList;

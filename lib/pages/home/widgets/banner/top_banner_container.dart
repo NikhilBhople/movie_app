@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movieapp/bloc/banner/banner_bloc.dart';
-import 'package:movieapp/bloc/banner/banner_state.dart';
+import 'package:movieapp/pages/home/widgets/banner/bloc/banner_bloc.dart';
+import 'package:movieapp/pages/home/widgets/banner/bloc/banner_state.dart';
 import 'package:movieapp/model/movie_model.dart';
 import 'package:movieapp/pages/detail/movie_detail.dart';
 
