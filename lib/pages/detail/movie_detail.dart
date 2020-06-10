@@ -15,34 +15,47 @@ class MovieDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: MediaQuery.removePadding(
-        removeTop: true,
-        child: ListView(
-          children: <Widget>[
-            Container(
-              height: 370,
-              child: Stack(
-                children: <Widget>[
-                  ImageContainer(movie: movie),
-                  BuildAppBar(),
-                  PlayButton(),
-                  ShareAndAddButton()
-                ],
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            title: BuildAppBar(),
+            expandedHeight: 370,
+            pinned: true,
+            flexibleSpace: FlexibleSpaceBar(
+              background: Padding(
+                padding: const EdgeInsets.only(bottom: 15),
+                child: Stack(
+                  children: <Widget>[
+                    ImageContainer(movie: movie),
+                    PlayButton(),
+                    ShareAndAddButton()
+                  ],
+                ),
               ),
             ),
-            buildMovieTitle(),
-            buildMovieCategoriesText(),
-            RaringBar(movie: movie),
-            BuildCountryYearLengthOfMovie(movie: movie),
-            buildMovieDescription(),
-            BuildContentList(title: 'Screenshots',list: movie.screenshots),
-          ],
-        ),
-        context: context,
+          ),
+          SliverFixedExtentList(
+              delegate: SliverChildBuilderDelegate(
+                (context, position) {
+                  return Column(
+                    children: <Widget>[
+                      buildMovieTitle(),
+                      buildMovieCategoriesText(),
+                      RaringBar(movie: movie),
+                      BuildCountryYearLengthOfMovie(movie: movie),
+                      buildMovieDescription(),
+                      BuildContentList(
+                          title: 'Screenshots', list: movie.screenshots)
+                    ],
+                  );
+                },
+                childCount: 1,
+              ),
+              itemExtent: MediaQuery.of(context).size.height),
+        ],
       ),
     );
   }
-
 
   buildMovieCategoriesText() {
     return Container(

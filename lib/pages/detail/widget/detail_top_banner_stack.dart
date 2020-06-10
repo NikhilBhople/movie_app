@@ -60,24 +60,22 @@ class PlayButton extends StatelessWidget {
 class BuildAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 20, top: 40),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          IconButton(
-              icon: Icon(Icons.arrow_back, size: 30, color: Colors.black,),
-              onPressed: () => Navigator.pop(context)),
-          Image(
-            image: AssetImage('assets/images/netflix_logo.png'),
-            height: 50,
-            width: 100,
-          ),
-          IconButton(
-              icon: Icon(Icons.favorite_border, size: 30,color: Colors.black,),
-              onPressed: () => Navigator.pop(context)),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        Flexible(
+          child: Center(
+            child: Image(
+              image: AssetImage('assets/images/netflix_logo.png'),
+              height: 50,
+              width: 100,
+            ),
+          )
+        ),
+        IconButton(
+            icon: Icon(Icons.favorite_border, size: 30,color: Colors.black,),
+            onPressed: () => Navigator.pop(context)),
+      ],
     );
   }
 }
